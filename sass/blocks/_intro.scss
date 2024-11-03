@@ -1,0 +1,112 @@
+.intro {
+    background: rgba(0, 0, 0, 0.3) url(../img/intro/bg.jpg) no-repeat center / cover;
+    background-blend-mode: overlay;
+    min-height: 800px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+
+    &__columns {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        column-gap: 2rem;
+        padding-top: calc(100vh / 3);
+        padding-bottom: 53px;
+        @media screen and (width < 1180px) {
+            flex-flow: column nowrap;
+        }
+    }
+
+    &__column {
+        flex: 1 1 45%;
+    }
+
+    &__title {
+        flex: 1 1 100%;
+    }
+
+    &__text {
+        // font-size: var(--md-24);
+        font-size: clamp(1rem, 1.1rem + 1.79vw, 1.5rem);
+        font-weight: 400;
+        line-height: 33.6px;
+        margin-bottom: var(--md-25);
+    }
+
+    &__link {
+        margin-bottom: var(--md-25);
+        transition: 0.3s;
+        display: inline-block;
+
+        &:hover::before {
+            transform: scaleX(0);
+        }
+        &::after {
+            content: '\27F6';
+            margin-left: var(--sm-10);
+        }
+    }
+ 
+}
+
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    @media screen and (width < 600px) {
+        flex-flow: column wrap;
+    }   
+    &__item {
+        flex: 1 1 45%;
+    }
+
+}
+.card {
+    padding: var(--md-30) var(--md-40);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+
+    &:nth-child(1) {
+        background: var(--grey);
+    }
+    &:nth-child(2) {
+        background: var(--lightblue);
+    }
+    &:nth-child(3) {
+        background: var(--violet);
+    }
+    &:nth-child(4) {
+        background: var(--red);
+    }
+
+    &__title {
+        margin-bottom: var(--sm-15);
+        flex: 1;
+    }
+
+    &:hover > &__link {
+        color: var(--black);
+    }
+    &__link {
+        transition: 0.3s;
+        
+        &:hover::before {
+            transform: scaleX(0);
+        }
+        &::before {
+            position: absolute;
+            inset: 0;
+        }
+        &::after {
+            content: '\27F6';
+            margin-left: var(--sm-10);
+        }
+    }
+}
+
+
+

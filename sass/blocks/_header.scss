@@ -1,0 +1,198 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid var(--white);
+    &__logo {
+        position: static;
+
+    }
+    &__burger:checked ~ &__nav {
+        @media (width < 870px) {
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: #000000a5;
+            z-index: 99;
+        }  
+    }
+    &__burger:checked ~ &__nav .menu {
+        @media (width < 870px) {
+            position: fixed;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 2rem;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 19rem;
+            background: var(--lightblue);
+            z-index: 100;
+            padding: 20px 15px;
+            font-size: 1.5rem;
+            line-height: 33px;
+            &::before {
+                position: relative;
+                content: url(../img/logo.svg);
+                top: -8px;
+                left: -8px;
+            }
+        }  
+    }
+    &__nav {
+        display: none;
+        transition: 0.3s;
+        @media (width > 870px) {
+            display: block;
+        }    
+    }
+    
+    &__right-col {
+        display: flex;
+        gap: var(--lg-70);
+        max-width: 360px;
+        @media screen and (width < 1280px) {
+            margin-left: auto;
+        }
+        @media (width < 870px) {
+            gap: 1rem;
+        }
+        
+    }
+}
+
+.header-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1560px;
+    padding: var(--md-33) 0;
+    margin: 0 auto;
+    min-height: 90px;
+    width: 94%;
+    @media screen and (width < 870px) {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+}
+
+
+.menu {
+    display: flex;
+    gap: var(--md-47);
+    &__item {
+        display: block;
+    }  
+}
+
+// .menu-socials {
+//     display: flex;
+//     flex-flow: column nowrap;
+//     gap: 2rem;
+//     @media  (width > 870px) {
+//         display: none;
+//     }       
+// }
+
+.burger {
+    position: fixed;
+    right: 3%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 6px;
+    align-items: end;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: var(--white);
+    border-radius: 50%;
+    z-index: 101;
+    @media (width > 870px) {
+        display: none;
+    }
+    
+    &__line {
+        transition: 0.3s;
+        background: #000;
+        width: 24px;
+        height: 1px;
+    }
+}
+
+.burger-checkbox {
+    display: none;
+    &:checked + .burger :nth-child(1) {
+        rotate: -45deg;
+        translate: 0px 7px;
+    }
+    
+    &:checked + .burger :nth-child(2) {
+        rotate: 45deg;
+    }
+    
+    &:checked + .burger :nth-child(3) {
+        opacity: 0;
+    }
+}
+
+.header-search {
+    position: relative;
+    width: 208.6px;
+    height: 26px;
+    
+    &:hover > &__button > &__img path {
+        transition: 0.3s;
+        fill: var(--orange);
+    }
+
+    &__button {
+        position: absolute;
+        top: 3px;
+        right: 8px;
+        padding: 0;
+        background: transparent;
+        border: none;
+    }
+    &__button.open > &__img path {
+        transition: 0.3s;
+        fill: var(--grey);
+    }
+
+    // &__img {
+        
+    // }
+    &__input {
+        display: none;
+        box-shadow: 0 0 10px #000;
+        border: none;
+        font-size: 12px;
+        line-height: 16px;
+        border-radius: 22px;
+        appearance: none;
+        outline: 1px solid var(--orange);
+        padding: 5px 45px 5px 10px;
+        &.open {
+            display: block;
+        }
+    }
+}
+
+.header-choice-lang {
+    display: inline-flex;
+    gap: var(--sm-11);
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 21.6px;
+    &:hover {
+        color: var(--orange);
+    }
+    &:hover > &__svg-globe path {
+        fill: var(--orange);
+    }
+}

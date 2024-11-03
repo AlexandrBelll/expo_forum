@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "Circe";
+    src: url("../fonts/../fonts/CirceRegular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Plumb";
+    src: url("../fonts/../fonts/PlumbRegular.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Plumb";
+    src: url("../fonts/../fonts/PlumbBold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+
+
+:root {
+    // --index: calc(1vw * 1vh);
+
+    // Цвет текста
+    --black: #2E373B;
+    --white: #fff;
+    --white-footer-text: #E0E0E0
+    --red: #F6404F;
+    --orange: #FFC41E;
+
+    // Цвет фона
+    --grey: #555555;
+    --violet: #7b8dca;
+    --cream: #FAF3E3;
+    --lightblue:#30BCC9;
+    --red: #F6404F;
+
+
+
+    // Размеры
+    --sm-10: 0.625rem;
+    --sm-11: 0.687rem;
+    --sm-12: 0.75rem;
+    --sm-13: 0.812rem;
+    --sm-14: 0.875rem;
+    --sm-15: 0.937rem;
+    --md-16: 1rem;
+    --md-18: 1.125rem;
+    --md-20: 1.25rem;
+    --md-21: 1.313rem;
+    --md-22: 1.375rem;
+    --md-24: 1.5rem;
+    --md-25: 1.563rem;
+    --md-28: 1.75rem;
+    --md-30: 1.875rem;
+    --md-32: 2rem;
+    --md-33: 2.06rem;
+    --md-36: 2.25rem;
+    --md-39: 2.438rem;
+    --md-40: 2.5rem;
+    --md-47: 2.937rem;
+    --lg-48: 3rem;
+    --lg-50: 3.125rem;
+    --lg-60: 3.75rem;
+    --lg-66: 4.125rem;
+    --lg-70: 4.375rem;
+    --lg-72: 4.5rem;
+    --lg-75: 4.687rem;
+    --lg-120: 120%;
+    --lg-140: 140%;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Circe", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    min-height: 100%;
+    overflow-x: hidden;
+    color: var(--white);
+    display: flex;
+    flex-flow: column nowrap;
+    line-height: 1.4rem;
+    position: relative;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    @media (width < 1406px) {
+        width: 94%
+    }
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.title-h1 {
+    font-family: "Plumb", sans-serif;
+    font-size: clamp(2rem, 1.242rem + 3.79vw, 4rem);
+    font-weight: 700;
+    line-height: 160%;
+    text-transform: uppercase;
+}
+
+.title-h2 {
+    font-family: "Plumb", sans-serif;
+    font-size: clamp(1.75rem, 1.242rem + 3.79vw, 1.875rem);
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.title-h3 {
+    font-family: "Plumb", sans-serif;
+    font-size: 1.31rem;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.link {
+    color: var(--white);
+    cursor: pointer;
+    position: relative;
+    &:hover {
+        color: var(--orange);
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: var(--orange);
+        transform: scaleX(0);
+        transform-origin: right bottom;
+        transition: transform 0.5s;
+    }
+    &:hover::before {
+        transition: transform 0.5s;
+        transform: scaleX(1);
+        transform-origin: left bottom;
+    }
+}
+
+// .btn {
+//     background: var(--black);
+//     border: none;
+//     padding: 0.75rem 1.25rem;
+//     color: var(--white);
+//     transition: 0.3s;
+//     &:hover {
+//         background: var(--cream);
+//         color: var(--black);
+//     }
+// }
+
+

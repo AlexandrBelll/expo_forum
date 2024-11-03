@@ -1,0 +1,79 @@
+.events {
+    background: var(--violet);
+}
+.events-content {
+        display: flex;
+        flex-flow: row wrap;
+        gap: var(--md-30);
+        padding: var(--lg-75) 0;
+
+		&__heading {
+            flex: 1 1 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            color: var(--black);
+            & a {
+                color: var(--black);
+                transition: 0.3s;
+                border-bottom: 1px solid var(--black);
+                &:hover {
+                    color: var(--white);
+                    border-bottom: 1px solid transparent;
+                }
+                &:after {
+                    content: "⟶";
+                    margin-left: var(--sm-10);
+                }
+            }
+		}
+        &__card {
+            flex: 1 1 30%;
+            @media screen and (width < 780px) {
+                flex: 1 1 100%;
+                align-items: center;
+            }
+        }
+}
+
+.event-card {
+        color: var(--black);
+        position: relative;
+        &:hover > &__title > a {
+            transition: 0.3s;
+            color: var(--orange);
+        }
+
+		&__img {
+            margin-bottom: var(--md-20);
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+		}
+
+		&__dates {
+            margin-bottom: var(--sm-10);
+            font-size: var(--sm-14);
+		}
+
+		&__title {
+            color: var(--red);
+            margin-bottom: var(--sm-10);
+            font-weight: 600;
+            & a {
+                transition: 0.3s;
+                color: var(--red);
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                }
+            }
+		}
+        // &__description {
+		// }
+}

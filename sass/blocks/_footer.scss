@@ -1,0 +1,100 @@
+.footer {
+    background: var(--lightblue);
+    padding: var(--lg-60) 0 var(--lg-70);
+}
+.footer-wrap {
+    display: flex;
+    gap: 2rem;
+    @media screen and (width < 1080px) {
+        flex-flow: column nowrap;
+    }
+
+    &__column {
+        flex: 1 1 45%;
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 2rem;
+        row-gap: var(--md-40);
+        @media screen and (width < 400px) {
+            flex-flow: column nowrap;
+        }
+    }
+}
+
+.footer-text {
+    font-size: var(--sm-14);
+    margin-bottom: var(--md-25);
+}
+
+.footer-content-box {
+        flex: 1 1 40%;
+		&__title {
+            margin-bottom: var(--md-20);
+		}
+
+        &__list {
+            font-size: var(--sm-14);      
+        }
+		&__list-item:not(:last-child) {
+            margin-bottom: var(--sm-10);
+		}
+}
+
+.socials-list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 219px;
+    &__item {
+        transition: 0.3s;
+        &:hover > a svg path {
+            fill: var(--orange);
+        }
+    }
+}
+
+.download-list {
+
+    &__item {
+        display: inline-block;
+        &:hover {
+            box-shadow: 0px 0px 10px var(--orange);
+        }
+        &:not(:last-child) {
+            margin-bottom: 1rem
+        }
+        
+    }
+}
+
+.footer-form {
+    display: flex;
+    background: var(--white);
+
+    &__input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        flex: 1;
+        padding: var(--sm-13) var(--md-20);
+        color: var(--black);
+        &::placeholder {
+            color: #9C9C9C;
+            font-size: var(--sm-12);
+        }
+    }
+
+    &__button {
+        background: var(--red);
+        width: 40px;
+        height: 40px;
+        border: none;
+        &:hover {
+            box-shadow: 0px 0px 10px var(--orange);
+        }
+    }
+}
+
+
+
+
+
